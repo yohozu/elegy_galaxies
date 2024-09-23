@@ -1,0 +1,261 @@
+[gd_scene load_steps=25 format=3 uid="uid://cfd5mcb3tjdls"]
+
+[ext_resource type="PackedScene" uid="uid://dyisu7uiib6rg" path="res://global/scenes.tscn" id="1_3830a"]
+[ext_resource type="Script" path="res://scenes/text/text.gd" id="2_nvg87"]
+[ext_resource type="Texture2D" uid="uid://cqwv825wd27kx" path="res://assets/pictures/UI/粗箭头.png" id="3_461vt"]
+[ext_resource type="Texture2D" uid="uid://c6383tswn245w" path="res://assets/pictures/UI/文本图0.png" id="3_23828"]
+[ext_resource type="Script" path="res://global/interactable.gd" id="4_oogfy"]
+[ext_resource type="Texture2D" uid="uid://5yu1wlrbpy04" path="res://assets/pictures/UI/文本图1.png" id="4_pq0l7"]
+[ext_resource type="FontFile" uid="uid://pye0cpcvyq2x" path="res://assets/fonts/ChuangKeTieJinGangTi-2.otf" id="5_m8gks"]
+[ext_resource type="Texture2D" uid="uid://dmefhkry7yo1n" path="res://assets/pictures/UI/文本图2.png" id="6_fsaa3"]
+[ext_resource type="Texture2D" uid="uid://g30w0pp3tnlq" path="res://assets/pictures/UI/文本图3.png" id="7_3k3yv"]
+[ext_resource type="Texture2D" uid="uid://bhbhsbj4owmfl" path="res://assets/pictures/UI/对话框.png" id="7_d0r1l"]
+[ext_resource type="Texture2D" uid="uid://cvo45ftw655x" path="res://assets/pictures/UI/火焰.png" id="7_ugje4"]
+[ext_resource type="Texture2D" uid="uid://gdfdhcuasqi1" path="res://assets/pictures/UI/光源.png" id="9_gjdpc"]
+
+[sub_resource type="Animation" id="Animation_we7um"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.48]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ColorRect3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_86c4f"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.48]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ColorRect3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.784314), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_guqof"]
+_data = {
+"RESET": SubResource("Animation_we7um"),
+"new_animation": SubResource("Animation_86c4f")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gccsc"]
+size = Vector2(386.667, 626.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1cw0"]
+size = Vector2(390, 590)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ug6p"]
+content_margin_left = 100.0
+content_margin_right = 100.0
+texture = ExtResource("7_d0r1l")
+texture_margin_left = 75.0
+texture_margin_top = 75.0
+texture_margin_right = 75.0
+texture_margin_bottom = 75.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_7msvh"]
+line_spacing = 10.0
+font = ExtResource("5_m8gks")
+font_size = 45
+font_color = Color(0.852667, 0.882331, 0.865173, 1)
+shadow_size = 5
+shadow_color = Color(0.412, 0.412, 0.412, 0.581)
+shadow_offset = Vector2(7, 7)
+
+[sub_resource type="Curve" id="Curve_x6ixm"]
+_data = [Vector2(0, 0.246377), 0.0, 0.0, 0, 0, Vector2(0.493213, 0.434783), 0.0, 0.0, 0, 0, Vector2(0.9819, 0.536232), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_w6gwo"]
+curve = SubResource("Curve_x6ixm")
+
+[sub_resource type="Gradient" id="Gradient_nnng0"]
+offsets = PackedFloat32Array(0, 0.255814, 0.334884, 0.455814, 0.637209, 0.953488, 1)
+colors = PackedColorArray(0.870588, 0.356863, 0, 1, 0.709804, 0.168627, 0.101961, 1, 0.670588, 0.0588235, 0.109804, 1, 0.604063, 0.090158, 0.0742471, 1, 0.450835, 0.0754334, 0.0636755, 1, 0.231373, 0.160784, 0.133333, 0, 0.299547, 0.299547, 0.299547, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s0ldg"]
+gradient = SubResource("Gradient_nnng0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_evead"]
+emission_shape = 1
+emission_sphere_radius = 8.0
+angular_velocity_curve = SubResource("CurveTexture_w6gwo")
+gravity = Vector3(0, -100, 0)
+color_ramp = SubResource("GradientTexture1D_s0ldg")
+
+[node name="Text" instance=ExtResource("1_3830a")]
+script = ExtResource("2_nvg87")
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.073, 0.073, 0.073, 0.819)
+
+[node name="Pic0" type="Sprite2D" parent="." index="1"]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("3_23828")
+
+[node name="ColorRect2" type="ColorRect" parent="Pic0" index="0"]
+modulate = Color(1, 1, 1, 0.784314)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -960.0
+offset_bottom = -540.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Pic1" type="Sprite2D" parent="." index="2"]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("4_pq0l7")
+
+[node name="ColorRect3" type="ColorRect" parent="Pic1" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -960.0
+offset_bottom = -540.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Pic1Light" type="PointLight2D" parent="Pic1" index="1"]
+position = Vector2(2.875, 163.218)
+scale = Vector2(4.80562, 4.48891)
+color = Color(1, 0.649, 0.46, 1)
+energy = 3.48
+texture = ExtResource("9_gjdpc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pic1/Pic1Light" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_guqof")
+}
+autoplay = "new_animation"
+
+[node name="Pic2" type="Sprite2D" parent="." index="3"]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("6_fsaa3")
+
+[node name="Pic3" type="Sprite2D" parent="." index="4"]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("7_3k3yv")
+
+[node name="Pic4" type="Sprite2D" parent="." index="5"]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("7_3k3yv")
+
+[node name="LeftArrow" type="Sprite2D" parent="." index="6"]
+position = Vector2(70, 920)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_461vt")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="LeftI" type="Area2D" parent="LeftArrow" index="0"]
+script = ExtResource("4_oogfy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArrow/LeftI" index="0"]
+z_index = 1
+z_as_relative = false
+position = Vector2(-26.6667, 6.66724)
+shape = SubResource("RectangleShape2D_gccsc")
+
+[node name="RightArrow" type="Sprite2D" parent="." index="7"]
+position = Vector2(1850, 920)
+rotation = -3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_461vt")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="RightI" type="Area2D" parent="RightArrow" index="0"]
+script = ExtResource("4_oogfy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArrow/RightI" index="0"]
+z_index = 1
+z_as_relative = false
+position = Vector2(-35, -31.6672)
+shape = SubResource("RectangleShape2D_f1cw0")
+
+[node name="Label" type="Label" parent="." index="8"]
+custom_minimum_size = Vector2(220, 250)
+offset_left = 120.0
+offset_top = 784.0
+offset_right = 1801.0
+offset_bottom = 1070.0
+theme_override_colors/font_color = Color(0.86057, 0.890996, 0.875598, 1)
+theme_override_colors/font_shadow_color = Color(0.0352941, 0.0784314, 0.0823529, 1)
+theme_override_colors/font_outline_color = Color(0.0666667, 0.12549, 0.121569, 1)
+theme_override_constants/line_spacing = 2
+theme_override_fonts/font = ExtResource("5_m8gks")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_0ug6p")
+label_settings = SubResource("LabelSettings_7msvh")
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 2
+metadata/_edit_lock_ = true
+
+[node name="Fire" type="GPUParticles2D" parent="Label" index="0"]
+visible = false
+texture_filter = 4
+position = Vector2(1482, 190)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_evead")
+texture = ExtResource("7_ugje4")
+metadata/_edit_lock_ = true
+
+[connection signal="interact" from="LeftArrow/LeftI" to="." method="_on_left_i_interact"]
+[connection signal="interact" from="RightArrow/RightI" to="." method="_on_right_i_interact"]

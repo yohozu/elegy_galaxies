@@ -1,0 +1,96 @@
+[gd_scene load_steps=16 format=3 uid="uid://2pv6ssrxpxho"]
+
+[ext_resource type="PackedScene" uid="uid://dyisu7uiib6rg" path="res://global/scenes.tscn" id="1_v4ouv"]
+[ext_resource type="Texture2D" uid="uid://b2ofaomesjqgs" path="res://assets/pictures/web_download/干燥行星.png" id="2_aqh88"]
+[ext_resource type="Script" path="res://scenes/explore/treasure/treasure_template.gd" id="3_o78k8"]
+[ext_resource type="FontFile" uid="uid://pye0cpcvyq2x" path="res://assets/fonts/ChuangKeTieJinGangTi-2.otf" id="4_33pyd"]
+[ext_resource type="AudioStream" uid="uid://dv8j1n2apxrmh" path="res://assets/audios/Ice and Snow.mp3" id="4_vakfj"]
+[ext_resource type="Texture2D" uid="uid://bhbhsbj4owmfl" path="res://assets/pictures/UI/对话框.png" id="5_qgyah"]
+[ext_resource type="Texture2D" uid="uid://cvo45ftw655x" path="res://assets/pictures/UI/火焰.png" id="6_pl6df"]
+[ext_resource type="Texture2D" uid="uid://cfa7op7dh43vh" path="res://assets/pictures/UI/毛笔箭头.png" id="8_s5e8w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v2hha"]
+content_margin_left = 100.0
+content_margin_right = 100.0
+texture = ExtResource("5_qgyah")
+texture_margin_left = 75.0
+texture_margin_top = 75.0
+texture_margin_right = 75.0
+texture_margin_bottom = 75.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_rccvu"]
+line_spacing = 10.0
+font = ExtResource("4_33pyd")
+font_size = 45
+font_color = Color(0.852667, 0.882331, 0.865173, 1)
+shadow_size = 5
+shadow_color = Color(0.412, 0.412, 0.412, 0.581)
+shadow_offset = Vector2(7, 7)
+
+[sub_resource type="Curve" id="Curve_nvvok"]
+_data = [Vector2(0, 0.246377), 0.0, 0.0, 0, 0, Vector2(0.493213, 0.434783), 0.0, 0.0, 0, 0, Vector2(0.9819, 0.536232), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_svoym"]
+curve = SubResource("Curve_nvvok")
+
+[sub_resource type="Gradient" id="Gradient_o3nyj"]
+offsets = PackedFloat32Array(0, 0.255814, 0.334884, 0.455814, 0.637209, 0.953488, 1)
+colors = PackedColorArray(0.870588, 0.356863, 0, 1, 0.709804, 0.168627, 0.101961, 1, 0.670588, 0.0588235, 0.109804, 1, 0.604063, 0.090158, 0.0742471, 1, 0.450835, 0.0754334, 0.0636755, 1, 0.231373, 0.160784, 0.133333, 0, 0.299547, 0.299547, 0.299547, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6mstw"]
+gradient = SubResource("Gradient_o3nyj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pgmht"]
+emission_shape = 1
+emission_sphere_radius = 8.0
+angular_velocity_curve = SubResource("CurveTexture_svoym")
+gravity = Vector3(0, -100, 0)
+color_ramp = SubResource("GradientTexture1D_6mstw")
+
+[node name="TreasureTemplate" instance=ExtResource("1_v4ouv")]
+texture = ExtResource("2_aqh88")
+script = ExtResource("3_o78k8")
+bgm = ExtResource("4_vakfj")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="." index="0"]
+custom_minimum_size = Vector2(220, 250)
+offset_left = 120.0
+offset_top = 784.0
+offset_right = 1801.0
+offset_bottom = 1070.0
+theme_override_colors/font_color = Color(0.86057, 0.890996, 0.875598, 1)
+theme_override_colors/font_shadow_color = Color(0.0352941, 0.0784314, 0.0823529, 1)
+theme_override_colors/font_outline_color = Color(0.0666667, 0.12549, 0.121569, 1)
+theme_override_constants/line_spacing = 2
+theme_override_fonts/font = ExtResource("4_33pyd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_v2hha")
+text = "你降落在一颗文明消散的行星上，海洋早已干涸，留下的是广袤的干燥荒漠。废墟散落在尘土中，昔日的辉煌已被时间和风沙吞噬。"
+label_settings = SubResource("LabelSettings_rccvu")
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 2
+metadata/_edit_lock_ = true
+
+[node name="Fire" type="GPUParticles2D" parent="Label" index="0"]
+texture_filter = 4
+position = Vector2(1482, 190)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_pgmht")
+texture = ExtResource("6_pl6df")
+metadata/_edit_lock_ = true
+
+[node name="TextureButton" type="TextureButton" parent="." index="1"]
+offset_left = 1724.0
+offset_top = 16.0
+offset_right = 1901.0
+offset_bottom = 105.0
+texture_normal = ExtResource("8_s5e8w")
+texture_pressed = ExtResource("8_s5e8w")
+texture_hover = ExtResource("8_s5e8w")
+texture_disabled = ExtResource("8_s5e8w")
+texture_focused = ExtResource("8_s5e8w")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

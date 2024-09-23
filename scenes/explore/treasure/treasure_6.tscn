@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dirfaw5cl6bb4"]
+
+[ext_resource type="PackedScene" uid="uid://2pv6ssrxpxho" path="res://scenes/explore/treasure/treasure_template.tscn" id="1_myocu"]
+[ext_resource type="Texture2D" uid="uid://c6aqqe4sxslde" path="res://assets/pictures/web_download/黑洞.png" id="2_v7vm1"]
+
+[node name="Treasure6" instance=ExtResource("1_myocu")]
+texture = ExtResource("2_v7vm1")
+
+[node name="Label" parent="." index="0"]
+text = "你飞过黑洞边缘，光线被拉扯成弯曲的环状，远处的星辰在黑洞引力下变形成独特的光环，深邃的黑暗吞噬了一切光芒。"

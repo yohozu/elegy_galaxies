@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw4242iowk0n8"]
+
+[ext_resource type="PackedScene" uid="uid://dnch76fxu1nkv" path="res://scenes/explore/battle/battle.tscn" id="1_foe5n"]
+[ext_resource type="Resource" uid="uid://dp2kayi87ifn0" path="res://scenes/explore/battle/enemy_resource/dinosaur.tres" id="2_l32au"]
+[ext_resource type="AudioStream" uid="uid://ctlty15k2pi4t" path="res://assets/audios/Beginning of Conflict.mp3" id="3_lvquj"]
+
+[node name="Battle" instance=ExtResource("1_foe5n")]
+enemy = ExtResource("2_l32au")
+bgm = ExtResource("3_lvquj")

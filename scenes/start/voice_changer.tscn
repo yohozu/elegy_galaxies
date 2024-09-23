@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnk0eunha5nfn"]
+
+[ext_resource type="Script" path="res://scenes/start/h_slider.gd" id="1_wjh02"]
+
+[node name="VoiceChanger" type="HSlider"]
+custom_minimum_size = Vector2(300, 100)
+max_value = 2.0
+step = 0.0
+script = ExtResource("1_wjh02")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6nbkyv4ivrer"]
+
+[ext_resource type="PackedScene" uid="uid://dnch76fxu1nkv" path="res://scenes/explore/battle/battle.tscn" id="1_rqokr"]
+[ext_resource type="Resource" uid="uid://d3nhn4jhrewcy" path="res://scenes/explore/battle/enemy_resource/drift.tres" id="2_srhsp"]
+[ext_resource type="AudioStream" uid="uid://dhlexcaswvo8r" path="res://assets/audios/Mysterious Lights.mp3" id="3_rajy8"]
+
+[node name="Battle" instance=ExtResource("1_rqokr")]
+enemy = ExtResource("2_srhsp")
+bgm = ExtResource("3_rajy8")

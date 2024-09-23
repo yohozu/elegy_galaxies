@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6ic6q24ssr2s"]
+
+[sub_resource type="Curve" id="Curve_2yxki"]
+min_value = 0.3
+_data = [Vector2(0.0115473, 0.369476), 0.0, 0.0, 0, 0, Vector2(0.533487, 0.71882), 0.0, 0.0, 0, 0, Vector2(0.829099, 0.965918), 0.0, 0.0, 0, 0, Vector2(1, 0.403558), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="SpaceLine" type="Line2D"]
+points = PackedVector2Array(90, 120, 146, 81, 223, 54, 300, 45, 386, 42)
+width = 16.0
+width_curve = SubResource("Curve_2yxki")
+default_color = Color(0.73, 0.73, 0.73, 0.466667)

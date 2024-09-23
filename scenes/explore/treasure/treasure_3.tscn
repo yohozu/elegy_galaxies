@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyfqju42sfpvk"]
+
+[ext_resource type="PackedScene" uid="uid://2pv6ssrxpxho" path="res://scenes/explore/treasure/treasure_template.tscn" id="1_3y4h3"]
+[ext_resource type="Texture2D" uid="uid://bqg6xdhkxveud" path="res://assets/pictures/web_download/绿巨星.jpg" id="2_444px"]
+
+[node name="Treasure3" instance=ExtResource("1_3y4h3")]
+texture = ExtResource("2_444px")
+
+[node name="Label" parent="." index="0"]
+text = "你接近一颗庞大的气体巨行星，厚重的绿色气体云层在风暴中翻滚，巨大的风暴漩涡在气体层中形成，仿佛宇宙中的绿色漩涡。"

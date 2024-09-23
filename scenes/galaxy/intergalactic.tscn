@@ -1,0 +1,1026 @@
+[gd_scene load_steps=67 format=3 uid="uid://d3mn31chej0ue"]
+
+[ext_resource type="PackedScene" uid="uid://dyisu7uiib6rg" path="res://global/scenes.tscn" id="1_vhmw1"]
+[ext_resource type="Script" path="res://scenes/galaxy/intergalactic.gd" id="2_2r03r"]
+[ext_resource type="Script" path="res://scenes/galaxy/interactable_galaxy.gd" id="3_0uqvd"]
+[ext_resource type="AudioStream" uid="uid://dx7f2w8h32jpe" path="res://assets/audios/Mothership.mp3" id="3_v2yj2"]
+[ext_resource type="Texture2D" uid="uid://bjgt2otx11cf" path="res://assets/pictures/galaxies/星系1.png" id="4_lcfxr"]
+[ext_resource type="PackedScene" uid="uid://dejgkrgl63j63" path="res://scenes/galaxy/point_light_2d.tscn" id="5_4328j"]
+[ext_resource type="Texture2D" uid="uid://dqlbfrhxbo4rr" path="res://assets/pictures/galaxies/星系2.png" id="5_isnva"]
+[ext_resource type="Texture2D" uid="uid://11ikfxvf2cgx" path="res://assets/pictures/galaxies/星系3.png" id="6_oyk6q"]
+[ext_resource type="Texture2D" uid="uid://dn4ttthigewus" path="res://assets/pictures/galaxies/星系4.png" id="7_0notx"]
+[ext_resource type="Texture2D" uid="uid://ctk07fsop5gxv" path="res://assets/pictures/galaxies/星系6.png" id="9_5vamb"]
+[ext_resource type="Texture2D" uid="uid://v4hbbum3447m" path="res://assets/pictures/galaxies_hue/-0.3/星系2.png" id="10_qoska"]
+[ext_resource type="Texture2D" uid="uid://cj5sep6hl7o7y" path="res://assets/pictures/galaxies/星系7.png" id="10_rwtle"]
+[ext_resource type="Texture2D" uid="uid://1u2d3nlwtwv0" path="res://assets/pictures/galaxies_hue/-0.3/星系3.png" id="11_oxwgj"]
+[ext_resource type="Texture2D" uid="uid://b3hw7r3jqrnng" path="res://assets/pictures/galaxies_hue/-0.3/星系4.png" id="12_qnorb"]
+[ext_resource type="PackedScene" uid="uid://b6ic6q24ssr2s" path="res://scenes/galaxy/space_line.tscn" id="12_vdmpm"]
+[ext_resource type="Texture2D" uid="uid://cdstugu5y52cc" path="res://assets/pictures/galaxies_hue/03/星系1.png" id="13_7ay31"]
+[ext_resource type="Texture2D" uid="uid://ck0pn3wdby36q" path="res://assets/pictures/galaxies_hue/-0.3/星系6.png" id="13_vmpjm"]
+[ext_resource type="Texture2D" uid="uid://cxvjmfhihma36" path="res://assets/pictures/galaxies_hue/03/星系5.png" id="14_blgec"]
+[ext_resource type="Texture2D" uid="uid://bhajf688i2kcc" path="res://assets/pictures/galaxies_hue/03/星系2.png" id="14_stv4t"]
+[ext_resource type="Texture2D" uid="uid://bmnhodde021qu" path="res://assets/pictures/galaxies_hue/03/星系3.png" id="15_gfun1"]
+[ext_resource type="Texture2D" uid="uid://c0xusl8wadn6" path="res://assets/pictures/galaxies_hue/06/星系5.png" id="15_lj0ua"]
+[ext_resource type="Texture2D" uid="uid://co6slxfmo15ny" path="res://assets/pictures/galaxies_hue/-01/星系5.png" id="16_2wxfx"]
+[ext_resource type="Texture2D" uid="uid://cqpbrrw5sgats" path="res://assets/pictures/galaxies_hue/03/星系4.png" id="16_ycr1e"]
+[ext_resource type="Texture2D" uid="uid://drq6lwieslm2v" path="res://assets/pictures/galaxies_hue/03/星系6.png" id="17_g5oe0"]
+[ext_resource type="Texture2D" uid="uid://o1gj26i2tjet" path="res://assets/pictures/galaxies_hue/04/星系7.png" id="17_nqbge"]
+[ext_resource type="Texture2D" uid="uid://c5esbefhxoh85" path="res://assets/pictures/galaxies_hue/-0.3/星系7.png" id="18_sykq3"]
+[ext_resource type="Texture2D" uid="uid://cmoghf1gve1ks" path="res://assets/pictures/galaxies_hue/004/星系1.png" id="18_tpceg"]
+[ext_resource type="Texture2D" uid="uid://cihncwwkjv763" path="res://assets/pictures/galaxies_hue/004/星系3.png" id="19_bwlxx"]
+[ext_resource type="Texture2D" uid="uid://dqas0mx0s11p7" path="res://assets/pictures/galaxies_hue/-01/星系7.png" id="19_ll45a"]
+[ext_resource type="Texture2D" uid="uid://qq6nhk8lbwtc" path="res://assets/pictures/galaxies_hue/004/星系2.png" id="29_8goob"]
+[ext_resource type="Texture2D" uid="uid://4fs1xccxfc3v" path="res://assets/pictures/galaxies_hue/004/星系4.png" id="30_odqfs"]
+[ext_resource type="Texture2D" uid="uid://4lmw3o8kmsxt" path="res://assets/pictures/galaxies_hue/004/星系6.png" id="31_ihoyb"]
+[ext_resource type="Texture2D" uid="uid://clu7nnhj3tx6t" path="res://assets/pictures/galaxies_hue/04/星系1.png" id="32_fgy7d"]
+[ext_resource type="Texture2D" uid="uid://dqhgoxpnreugf" path="res://assets/pictures/galaxies_hue/04/星系2.png" id="33_uqhqd"]
+[ext_resource type="Texture2D" uid="uid://d02ac5xbff6li" path="res://assets/pictures/galaxies_hue/04/星系3.png" id="34_j8g0e"]
+[ext_resource type="Texture2D" uid="uid://cgvf3q5yd2vjr" path="res://assets/pictures/galaxies_hue/04/星系4.png" id="35_tfnis"]
+[ext_resource type="Texture2D" uid="uid://bj2htbg3mrsmn" path="res://assets/pictures/galaxies_hue/04/星系6.png" id="36_g4jiv"]
+[ext_resource type="Texture2D" uid="uid://dtdlb857os2oj" path="res://assets/pictures/galaxies_hue/06/星系1.png" id="37_s861r"]
+[ext_resource type="Texture2D" uid="uid://tnjlql6bg85u" path="res://assets/pictures/galaxies_hue/06/星系2.png" id="38_thwxa"]
+[ext_resource type="Texture2D" uid="uid://dw0p4t8lavl6o" path="res://assets/pictures/galaxies_hue/06/星系3.png" id="39_rmn2k"]
+[ext_resource type="Texture2D" uid="uid://cnbicdbb1bgbl" path="res://assets/pictures/galaxies_hue/06/星系4.png" id="40_i7wy3"]
+[ext_resource type="Texture2D" uid="uid://brerxfetshbu1" path="res://assets/pictures/galaxies_hue/06/星系6.png" id="41_e1w5o"]
+[ext_resource type="Texture2D" uid="uid://dg8qg0t51e7y1" path="res://assets/pictures/galaxies_hue/-0.3/星系1.png" id="42_tif78"]
+[ext_resource type="Texture2D" uid="uid://dejy541pnddbi" path="res://assets/pictures/galaxies_hue/03/星系7.png" id="43_gsjmc"]
+[ext_resource type="Texture2D" uid="uid://cfxcfs0vq02or" path="res://assets/pictures/galaxies_hue/004/星系5.png" id="44_3edf2"]
+[ext_resource type="Texture2D" uid="uid://bi21fjojry70q" path="res://assets/pictures/galaxies_hue/004/星系7.png" id="45_oc4he"]
+[ext_resource type="Texture2D" uid="uid://dqvvmjepvedye" path="res://assets/pictures/galaxies_hue/04/星系5.png" id="46_xou5g"]
+[ext_resource type="Texture2D" uid="uid://dcph42kgvaeeb" path="res://assets/pictures/galaxies_hue/06/星系7.png" id="47_sueka"]
+[ext_resource type="Texture2D" uid="uid://x0cypekawy1y" path="res://assets/pictures/galaxies_hue/-0.3/星系5.png" id="48_0fqh0"]
+[ext_resource type="Texture2D" uid="uid://bgyqnc6nulu1n" path="res://assets/pictures/galaxies_hue/-02/星系5.png" id="49_8tss2"]
+[ext_resource type="Texture2D" uid="uid://bwpito3m60ipp" path="res://assets/pictures/galaxies_hue/-02/星系7.png" id="50_qbjpj"]
+[ext_resource type="Texture2D" uid="uid://br05nx27tsisb" path="res://assets/pictures/UI/设置图标.png" id="52_44ydw"]
+[ext_resource type="Theme" uid="uid://654fygt855io" path="res://assets/fonts/main_theme.tres" id="53_oqpf8"]
+[ext_resource type="Script" path="res://scenes/start/check_button.gd" id="54_8hvc3"]
+[ext_resource type="PackedScene" uid="uid://dnk0eunha5nfn" path="res://scenes/start/voice_changer.tscn" id="55_ioqhc"]
+[ext_resource type="Texture2D" uid="uid://c4kqg2gdm145x" path="res://assets/pictures/UI/退出.png" id="56_wp3vh"]
+[ext_resource type="Texture2D" uid="uid://cxhw0yfrypil2" path="res://assets/pictures/UI/当前任务.png" id="57_rdbt1"]
+[ext_resource type="FontFile" uid="uid://pye0cpcvyq2x" path="res://assets/fonts/ChuangKeTieJinGangTi-2.otf" id="58_0g8du"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1c1y1"]
+radius = 193.448
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4kq2"]
+bg_color = Color(0.180392, 0.219608, 0.196078, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.027451, 0.0235294, 0.027451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bpplg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2bik"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jj2e2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvc20"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5w23n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1727f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Intergalactic" instance=ExtResource("1_vhmw1")]
+visibility_layer = 3
+script = ExtResource("2_2r03r")
+bgm = ExtResource("3_v2yj2")
+metadata/_edit_lock_ = true
+
+[node name="CannotInter1" type="Sprite2D" parent="." index="0"]
+position = Vector2(366, 858)
+rotation = -5.30231
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("13_7ay31")
+
+[node name="CannotInter3" type="Sprite2D" parent="." index="1"]
+position = Vector2(1307, 154)
+rotation = -5.35467
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("15_gfun1")
+
+[node name="CannotInter4" type="Sprite2D" parent="." index="2"]
+position = Vector2(915, 135)
+rotation = 5.03702
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("16_ycr1e")
+
+[node name="CannotInter5" type="Sprite2D" parent="." index="3"]
+position = Vector2(1704, 511)
+rotation = 0.724312
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("17_g5oe0")
+
+[node name="CannotInter6" type="Sprite2D" parent="." index="4"]
+position = Vector2(348, 333)
+rotation = 2.80998
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("18_tpceg")
+
+[node name="CannotInter7" type="Sprite2D" parent="." index="5"]
+position = Vector2(545, 263)
+rotation = -4.24115
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("19_bwlxx")
+
+[node name="CannotInter8" type="Sprite2D" parent="." index="6"]
+position = Vector2(1742, 673)
+rotation = 4.03695
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("29_8goob")
+
+[node name="CannotInter9" type="Sprite2D" parent="." index="7"]
+position = Vector2(1353, 843)
+rotation = -1.75057
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("30_odqfs")
+
+[node name="CannotInter10" type="Sprite2D" parent="." index="8"]
+position = Vector2(580, 966)
+rotation = 3.97586
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("31_ihoyb")
+
+[node name="CannotInter11" type="Sprite2D" parent="." index="9"]
+position = Vector2(1473, 928)
+rotation = 1.50796
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("32_fgy7d")
+
+[node name="CannotInter12" type="Sprite2D" parent="." index="10"]
+position = Vector2(1060, 1005)
+rotation = -1.27235
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("33_uqhqd")
+
+[node name="CannotInter13" type="Sprite2D" parent="." index="11"]
+position = Vector2(869, 988)
+rotation = -0.314159
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("34_j8g0e")
+
+[node name="CannotInter2" type="Sprite2D" parent="." index="12"]
+position = Vector2(1470, 730)
+rotation = 2.04727
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("14_stv4t")
+
+[node name="CannotInter14" type="Sprite2D" parent="." index="13"]
+position = Vector2(1595, 754)
+rotation = -0.253073
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("35_tfnis")
+
+[node name="CannotInter15" type="Sprite2D" parent="." index="14"]
+position = Vector2(319, 741)
+rotation = -2.22704
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("36_g4jiv")
+
+[node name="CannotInter16" type="Sprite2D" parent="." index="15"]
+position = Vector2(205, 530)
+rotation = 3.81703
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("37_s861r")
+
+[node name="CannotInter17" type="Sprite2D" parent="." index="16"]
+position = Vector2(477, 760)
+rotation = -2.06822
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("38_thwxa")
+
+[node name="CannotInter18" type="Sprite2D" parent="." index="17"]
+position = Vector2(1382, 678)
+rotation = 4.13643
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("39_rmn2k")
+
+[node name="CannotInter19" type="Sprite2D" parent="." index="18"]
+position = Vector2(1585, 398)
+rotation = -3.2882
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("40_i7wy3")
+
+[node name="CannotInter20" type="Sprite2D" parent="." index="19"]
+position = Vector2(490, 396)
+rotation = -0.371755
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("41_e1w5o")
+
+[node name="CannotInter21" type="Sprite2D" parent="." index="20"]
+position = Vector2(1640, 287)
+rotation = 0.689405
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("42_tif78")
+
+[node name="CannotInter22" type="Sprite2D" parent="." index="21"]
+position = Vector2(1354, 370)
+rotation = -0.567232
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("14_blgec")
+
+[node name="CannotInter23" type="Sprite2D" parent="." index="22"]
+position = Vector2(1501, 168)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("43_gsjmc")
+
+[node name="CannotInter24" type="Sprite2D" parent="." index="23"]
+position = Vector2(760, 939)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("44_3edf2")
+
+[node name="CannotInter25" type="Sprite2D" parent="." index="24"]
+position = Vector2(576, 140)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("45_oc4he")
+
+[node name="CannotInter26" type="Sprite2D" parent="." index="25"]
+position = Vector2(361, 186)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("46_xou5g")
+
+[node name="CannotInter27" type="Sprite2D" parent="." index="26"]
+position = Vector2(771, 126)
+rotation = 3.65821
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("17_nqbge")
+
+[node name="CannotInter28" type="Sprite2D" parent="." index="27"]
+position = Vector2(1090, 74)
+rotation = -3.55174
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("15_lj0ua")
+
+[node name="CannotInter29" type="Sprite2D" parent="." index="28"]
+position = Vector2(1666, 889)
+rotation = 1.11352
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("47_sueka")
+
+[node name="CannotInter30" type="Sprite2D" parent="." index="29"]
+position = Vector2(1444, 507)
+rotation = 0.305433
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("48_0fqh0")
+
+[node name="CannotInter31" type="Sprite2D" parent="." index="30"]
+position = Vector2(343, 568)
+rotation = -1.15192
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("18_sykq3")
+
+[node name="CannotInter32" type="Sprite2D" parent="." index="31"]
+position = Vector2(242, 368)
+rotation = 1.74533
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("16_2wxfx")
+
+[node name="CannotInter33" type="Sprite2D" parent="." index="32"]
+position = Vector2(233, 812)
+rotation = 3.12763
+scale = Vector2(0.17, 0.15)
+texture = ExtResource("19_ll45a")
+
+[node name="CannotInter34" type="Sprite2D" parent="." index="33"]
+position = Vector2(1136, 889)
+rotation = -0.244346
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("49_8tss2")
+
+[node name="CannotInter35" type="Sprite2D" parent="." index="34"]
+position = Vector2(1625, 545)
+rotation = 1.16588
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("50_qbjpj")
+
+[node name="ColorRect" type="ColorRect" parent="." index="35"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.04, 0, 0.266667)
+metadata/_edit_lock_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="." index="36"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.682353)
+metadata/_edit_lock_ = true
+
+[node name="InterGalaxy0" type="Area2D" parent="." index="37"]
+position = Vector2(940, 562)
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy0" index="0"]
+texture = ExtResource("4_lcfxr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy0" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy0" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy7" type="Area2D" parent="." index="38"]
+position = Vector2(1224, 641)
+rotation = 1.53764
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 7
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy7" index="0"]
+texture = ExtResource("5_isnva")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy7" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy7" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy8" type="Area2D" parent="." index="39"]
+position = Vector2(1119, 535)
+rotation = -5.03702
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 8
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy8" index="0"]
+texture = ExtResource("6_oyk6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy8" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy8" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy9" type="Area2D" parent="." index="40"]
+position = Vector2(1116, 353)
+rotation = 1.21999
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 9
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy9" index="0"]
+texture = ExtResource("7_0notx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy9" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy9" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy10" type="Area2D" parent="." index="41"]
+position = Vector2(692, 416)
+rotation = -1.00705
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 10
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy10" index="0"]
+texture = ExtResource("9_5vamb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy10" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy10" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy11" type="Area2D" parent="." index="42"]
+position = Vector2(809, 592)
+rotation = 1.37881
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 11
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy11" index="0"]
+texture = ExtResource("10_qoska")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy11" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy11" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy12" type="Area2D" parent="." index="43"]
+position = Vector2(723, 682)
+rotation = 1.58999
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 12
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy12" index="0"]
+texture = ExtResource("11_oxwgj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy12" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy12" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy13" type="Area2D" parent="." index="44"]
+position = Vector2(1209, 466)
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 13
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy13" index="0"]
+texture = ExtResource("12_qnorb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy13" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy13" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy14" type="Area2D" parent="." index="45"]
+position = Vector2(917, 718)
+rotation = -2.01411
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 14
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy14" index="0"]
+texture = ExtResource("13_vmpjm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy14" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy14" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy15" type="Area2D" parent="." index="46"]
+position = Vector2(1029, 465)
+rotation = 0.637045
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 15
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy15" index="0"]
+texture = ExtResource("14_blgec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy15" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy15" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy1" type="Area2D" parent="." index="47"]
+position = Vector2(1039, 628)
+rotation = -2.17468
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 1
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy1" index="0"]
+texture = ExtResource("15_lj0ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy1" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy1" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy2" type="Area2D" parent="." index="48"]
+position = Vector2(812, 751)
+rotation = 2.06822
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy2" index="0"]
+texture = ExtResource("16_2wxfx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy2" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy2" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy3" type="Area2D" parent="." index="49"]
+position = Vector2(778, 333)
+rotation = -2.22704
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy3" index="0"]
+texture = ExtResource("17_nqbge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy3" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy3" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy4" type="Area2D" parent="." index="50"]
+position = Vector2(610, 533)
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 4
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy4" index="0"]
+texture = ExtResource("18_sykq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy4" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy4" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy5" type="Area2D" parent="." index="51"]
+position = Vector2(904, 428)
+rotation = -1.90764
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 5
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy5" index="0"]
+texture = ExtResource("19_ll45a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy5" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy5" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="InterGalaxy6" type="Area2D" parent="." index="52"]
+position = Vector2(1098, 711)
+rotation = 0.0523599
+scale = Vector2(0.15, 0.15)
+script = ExtResource("3_0uqvd")
+number = 6
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="InterGalaxy6" index="0"]
+texture = ExtResource("10_rwtle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterGalaxy6" index="1"]
+shape = SubResource("CircleShape2D_1c1y1")
+
+[node name="PointLight2D" parent="InterGalaxy6" index="2" instance=ExtResource("5_4328j")]
+visible = false
+
+[node name="SpaceLine" parent="." index="53" instance=ExtResource("12_vdmpm")]
+
+[node name="Setting" type="TextureButton" parent="." index="54"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_top = 23.0
+offset_right = -42.0
+offset_bottom = 103.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("52_44ydw")
+texture_pressed = ExtResource("52_44ydw")
+texture_hover = ExtResource("52_44ydw")
+texture_disabled = ExtResource("52_44ydw")
+texture_focused = ExtResource("52_44ydw")
+stretch_mode = 4
+
+[node name="Config" type="Node" parent="." index="55"]
+
+[node name="Panel" type="Panel" parent="Config" index="0"]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x4kq2")
+metadata/_edit_lock_ = true
+
+[node name="VBox" type="VBoxContainer" parent="Config/Panel" index="0"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="HBox1" type="HBoxContainer" parent="Config/Panel/VBox" index="0"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label1" type="Label" parent="Config/Panel/VBox/HBox1" index="0"]
+layout_mode = 2
+theme = ExtResource("53_oqpf8")
+text = "全屏"
+
+[node name="MarginContainer6" type="MarginContainer" parent="Config/Panel/VBox/HBox1" index="1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="Config/Panel/VBox/HBox1" index="2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bpplg")
+script = ExtResource("54_8hvc3")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Config/Panel/VBox/HBox1" index="3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="Config/Panel/VBox/HBox1" index="4"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Config/Panel/VBox" index="1"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="HBox2" type="HBoxContainer" parent="Config/Panel/VBox" index="2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="Config/Panel/VBox/HBox2" index="0"]
+layout_mode = 2
+theme = ExtResource("53_oqpf8")
+text = "音乐"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Config/Panel/VBox/HBox2" index="1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="VoiceChanger" parent="Config/Panel/VBox/HBox2" index="2" instance=ExtResource("55_ioqhc")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Config/Panel/VBox" index="3"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="HBox3" type="HBoxContainer" parent="Config/Panel/VBox" index="4"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label3" type="Label" parent="Config/Panel/VBox/HBox3" index="0"]
+layout_mode = 2
+theme = ExtResource("53_oqpf8")
+text = "音效"
+
+[node name="MarginContainer5" type="MarginContainer" parent="Config/Panel/VBox/HBox3" index="1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="On3" type="Button" parent="Config/Panel/VBox/HBox3" index="2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("53_oqpf8")
+theme_override_colors/font_hover_color = Color(0.521141, 0.521141, 0.521141, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q2bik")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jj2e2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jj2e2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wvc20")
+text = "on"
+
+[node name="MarginContainer" type="MarginContainer" parent="Config/Panel/VBox/HBox3" index="3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Off3" type="Button" parent="Config/Panel/VBox/HBox3" index="4"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("53_oqpf8")
+theme_override_colors/font_hover_color = Color(0.521141, 0.521141, 0.521141, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q2bik")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jj2e2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jj2e2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wvc20")
+text = "off"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Config/Panel/VBox" index="5"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="HBox4" type="HBoxContainer" parent="Config/Panel/VBox" index="6"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="Config/Panel/VBox/HBox4" index="0"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="BackTitle2" type="Button" parent="Config/Panel/VBox/HBox4" index="1"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("53_oqpf8")
+theme_override_colors/font_hover_color = Color(0.505344, 0.505344, 0.505344, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5w23n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1727f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1727f")
+text = "返回标题"
+
+[node name="MarginContainer" type="MarginContainer" parent="Config/Panel/VBox/HBox4" index="2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="BackQuit" type="Button" parent="Config/Panel/VBox/HBox4" index="3"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("53_oqpf8")
+theme_override_colors/font_hover_color = Color(0.505344, 0.505344, 0.505344, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5w23n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1727f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1727f")
+text = "退出游戏
+"
+
+[node name="CloseSetting" type="TextureButton" parent="Config/Panel" index="1"]
+layout_mode = 0
+offset_left = 904.0
+offset_top = -90.0
+offset_right = 992.0
+offset_bottom = -2.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("56_wp3vh")
+texture_pressed = ExtResource("56_wp3vh")
+texture_hover = ExtResource("56_wp3vh")
+texture_disabled = ExtResource("56_wp3vh")
+texture_focused = ExtResource("56_wp3vh")
+
+[node name="ColorRect" type="ColorRect" parent="Config" index="1"]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="EndExplore" type="Node" parent="." index="56"]
+
+[node name="Panel" type="Panel" parent="EndExplore" index="0"]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x4kq2")
+metadata/_edit_lock_ = true
+
+[node name="VBox" type="VBoxContainer" parent="EndExplore/Panel" index="0"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="EndExplore/Panel/VBox" index="0"]
+layout_mode = 2
+theme = ExtResource("53_oqpf8")
+text = "感谢游玩，敬请期待后续更新！"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="EndExplore/Panel/VBox" index="1"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EndExplore/Panel/VBox" index="2"]
+layout_mode = 2
+alignment = 1
+
+[node name="BackTitle" type="Button" parent="EndExplore/Panel/VBox/HBoxContainer" index="0"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("53_oqpf8")
+theme_override_colors/font_hover_color = Color(0.505344, 0.505344, 0.505344, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5w23n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1727f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1727f")
+text = "返回标题"
+
+[node name="MarginContainer" type="MarginContainer" parent="EndExplore/Panel/VBox/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="BackQuit" type="Button" parent="EndExplore/Panel/VBox/HBoxContainer" index="2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("53_oqpf8")
+theme_override_colors/font_hover_color = Color(0.505344, 0.505344, 0.505344, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5w23n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1727f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1727f")
+text = "退出游戏
+"
+
+[node name="Task" type="TextureButton" parent="." index="57"]
+offset_left = 1655.0
+offset_top = 21.0
+offset_right = 1735.0
+offset_bottom = 101.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("57_rdbt1")
+texture_pressed = ExtResource("57_rdbt1")
+texture_hover = ExtResource("57_rdbt1")
+texture_disabled = ExtResource("57_rdbt1")
+texture_focused = ExtResource("57_rdbt1")
+
+[node name="TaskList" type="Node" parent="." index="58"]
+
+[node name="Panel" type="Panel" parent="TaskList" index="0"]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x4kq2")
+
+[node name="CloseTask" type="TextureButton" parent="TaskList/Panel" index="0"]
+layout_mode = 0
+offset_left = 902.0
+offset_top = -89.0
+offset_right = 990.0
+offset_bottom = -1.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("56_wp3vh")
+texture_pressed = ExtResource("56_wp3vh")
+texture_hover = ExtResource("56_wp3vh")
+texture_disabled = ExtResource("56_wp3vh")
+texture_focused = ExtResource("56_wp3vh")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TaskList/Panel" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TaskList/Panel/ScrollContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("58_0g8du")
+theme_override_font_sizes/font_size = 40
+text = "当前任务"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer2" index="0"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("58_0g8du")
+theme_override_font_sizes/font_size = 30
+text = "寻找宇宙中的高等生物，在其意识中搜索“宇宙之神”。"
+
+[node name="MarginContainer2" type="MarginContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer" index="3"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer3" index="0"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer3" index="1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("58_0g8du")
+theme_override_font_sizes/font_size = 40
+text = "掌握科技"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer4" index="0"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer4" index="1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("58_0g8du")
+theme_override_font_sizes/font_size = 30
+text = "虫洞旅行"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer" index="6"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer5" index="0"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer5" index="1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("58_0g8du")
+theme_override_font_sizes/font_size = 30
+text = "意识连接 心灵同步"
+
+[node name="MarginContainer3" type="MarginContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer" index="7"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer" index="8"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer6" index="0"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer6" index="1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("58_0g8du")
+theme_override_font_sizes/font_size = 40
+text = "当前精神值"
+
+[node name="MarginContainer2" type="MarginContainer" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer6" index="2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="vigor" type="Label" parent="TaskList/Panel/ScrollContainer/VBoxContainer/HBoxContainer6" index="3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("58_0g8du")
+theme_override_font_sizes/font_size = 40
+
+[connection signal="pressed" from="Setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="Config/Panel/VBox/HBox1/CheckButton" to="Config/Panel/VBox/HBox1/CheckButton" method="_on_pressed"]
+[connection signal="pressed" from="Config/Panel/VBox/HBox3/On3" to="Config/Panel/VBox/HBox1/CheckButton" method="_on_on_3_pressed"]
+[connection signal="pressed" from="Config/Panel/VBox/HBox3/Off3" to="Config/Panel/VBox/HBox1/CheckButton" method="_on_off_3_pressed"]
+[connection signal="pressed" from="Config/Panel/VBox/HBox4/BackTitle2" to="." method="_on_back_title_pressed"]
+[connection signal="pressed" from="Config/Panel/VBox/HBox4/BackQuit" to="." method="_on_back_quit_pressed"]
+[connection signal="pressed" from="Config/Panel/CloseSetting" to="." method="_on_close_setting_pressed"]
+[connection signal="pressed" from="EndExplore/Panel/VBox/HBoxContainer/BackTitle" to="." method="_on_back_title_pressed"]
+[connection signal="pressed" from="EndExplore/Panel/VBox/HBoxContainer/BackQuit" to="." method="_on_back_quit_pressed"]
+[connection signal="pressed" from="Task" to="." method="_on_task_pressed"]
+[connection signal="pressed" from="TaskList/Panel/CloseTask" to="." method="_on_close_task_pressed"]

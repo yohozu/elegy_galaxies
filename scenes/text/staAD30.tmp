@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf0kungqt5xrf"]
+
+[ext_resource type="PackedScene" uid="uid://dyisu7uiib6rg" path="res://global/scenes.tscn" id="1_ruta0"]
+[ext_resource type="Script" path="res://scenes/text/start_text.gd" id="2_wc8l1"]
+
+[node name="StartText" instance=ExtResource("1_ruta0")]
+script = ExtResource("2_wc8l1")
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.652)
+
+[node name="ColorRect2" type="ColorRect" parent="." index="1"]
+custom_minimum_size = Vector2(850, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+color = Color(0.0705882, 0.0745098, 0.101961, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." index="2"]
+visible = false
+custom_minimum_size = Vector2(850, 0)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.099986, 0.099986, 0.099986, 1)

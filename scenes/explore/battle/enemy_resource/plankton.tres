@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bl303t8vf7f8r"]
+
+[ext_resource type="Texture2D" uid="uid://cgangyuu2uhdo" path="res://assets/pictures/web_download/甲烷湖.jpg" id="1_wvjhu"]
+[ext_resource type="Script" path="res://scenes/explore/battle/enemy_resource/base_enemy.gd" id="2_srpro"]
+[ext_resource type="Texture2D" uid="uid://cnkctnk2uoapn" path="res://assets/pictures/creatures/1类生物4.png" id="3_12sam"]
+
+[resource]
+script = ExtResource("2_srpro")
+text = "探测器在行星表面的甲烷湖中发现了蠕动的意识。"
+texture = ExtResource("3_12sam")
+envir = ExtResource("1_wvjhu")
+damage = 4.0
+recover_conn = 5.0
+recover_sync = 0.0
+current_sync = 0.0
+current_conn = 40.0
+enemy_number = 4

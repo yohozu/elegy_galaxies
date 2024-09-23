@@ -1,0 +1,1072 @@
+[gd_scene load_steps=53 format=3 uid="uid://dnch76fxu1nkv"]
+
+[ext_resource type="Script" path="res://scenes/explore/battle/battle.gd" id="1_rgnlo"]
+[ext_resource type="Texture2D" uid="uid://j0qrwu84oxid" path="res://assets/pictures/creatures/1类生物1.png" id="2_bknvy"]
+[ext_resource type="Resource" uid="uid://bl303t8vf7f8r" path="res://scenes/explore/battle/enemy_resource/plankton.tres" id="2_nip18"]
+[ext_resource type="Texture2D" uid="uid://dovteoy64tds6" path="res://assets/pictures/UI/星光.png" id="3_chyhn"]
+[ext_resource type="AudioStream" uid="uid://cf5lxbgeluxa1" path="res://assets/audios/After the End.mp3" id="3_pk7gr"]
+[ext_resource type="FontFile" uid="uid://pye0cpcvyq2x" path="res://assets/fonts/ChuangKeTieJinGangTi-2.otf" id="4_75ws5"]
+[ext_resource type="Texture2D" uid="uid://bqg6xdhkxveud" path="res://assets/pictures/web_download/绿巨星.jpg" id="4_pinbk"]
+[ext_resource type="Texture2D" uid="uid://bhbhsbj4owmfl" path="res://assets/pictures/UI/对话框.png" id="5_eij8n"]
+[ext_resource type="Texture2D" uid="uid://cvo45ftw655x" path="res://assets/pictures/UI/火焰.png" id="6_pt0bq"]
+[ext_resource type="Texture2D" uid="uid://6n5ribl7k0k1" path="res://assets/pictures/creatures/1类生物4-1.png" id="8_mpxwa"]
+[ext_resource type="Texture2D" uid="uid://cnkctnk2uoapn" path="res://assets/pictures/creatures/1类生物4.png" id="8_t6w22"]
+[ext_resource type="Texture2D" uid="uid://bjgpo75c0s8in" path="res://assets/pictures/creatures/1类生物1-1.png" id="10_ip4fu"]
+[ext_resource type="Texture2D" uid="uid://fq4ovciktwp" path="res://assets/pictures/creatures/1类生物2.png" id="10_v05lv"]
+[ext_resource type="Texture2D" uid="uid://b5bdei2p72x6u" path="res://assets/pictures/creatures/1类生物2-1.png" id="11_7jo5k"]
+[ext_resource type="Texture2D" uid="uid://lrtqsobrli5l" path="res://assets/pictures/creatures/1类生物3.png" id="13_bbvif"]
+[ext_resource type="Texture2D" uid="uid://wj28fcs4lol8" path="res://assets/pictures/creatures/1类生物3-1.png" id="14_6prvm"]
+[ext_resource type="Texture2D" uid="uid://4wq54csgrhpl" path="res://assets/pictures/UI/提示.png" id="17_stgwl"]
+[ext_resource type="Texture2D" uid="uid://c4kqg2gdm145x" path="res://assets/pictures/UI/退出.png" id="18_e3h28"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htcrn"]
+bg_color = Color(0.129412, 0.811765, 0.85098, 0.14902)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6b1rl"]
+bg_color = Color(6.44952e-06, 0.689145, 0.641363, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vvg1"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg4i2"]
+bg_color = Color(0.991164, 0.991164, 0.991164, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckgvn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8, 0.8, 0.8, 0.447059)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3bww"]
+content_margin_left = 100.0
+content_margin_right = 100.0
+texture = ExtResource("5_eij8n")
+texture_margin_left = 75.0
+texture_margin_top = 75.0
+texture_margin_right = 75.0
+texture_margin_bottom = 75.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhqe5"]
+line_spacing = 10.0
+font = ExtResource("4_75ws5")
+font_size = 45
+font_color = Color(0.852667, 0.882331, 0.865173, 1)
+shadow_size = 5
+shadow_color = Color(0.412, 0.412, 0.412, 0.581)
+shadow_offset = Vector2(7, 7)
+
+[sub_resource type="Curve" id="Curve_7epon"]
+_data = [Vector2(0, 0.246377), 0.0, 0.0, 0, 0, Vector2(0.493213, 0.434783), 0.0, 0.0, 0, 0, Vector2(0.9819, 0.536232), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_w6gwo"]
+curve = SubResource("Curve_7epon")
+
+[sub_resource type="Gradient" id="Gradient_6frsb"]
+offsets = PackedFloat32Array(0, 0.255814, 0.334884, 0.455814, 0.637209, 0.953488, 1)
+colors = PackedColorArray(0.870588, 0.356863, 0, 1, 0.709804, 0.168627, 0.101961, 1, 0.670588, 0.0588235, 0.109804, 1, 0.604063, 0.090158, 0.0742471, 1, 0.450835, 0.0754334, 0.0636755, 1, 0.231373, 0.160784, 0.133333, 0, 0.299547, 0.299547, 0.299547, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s0ldg"]
+gradient = SubResource("Gradient_6frsb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_itonr"]
+emission_shape = 1
+emission_sphere_radius = 8.0
+angular_velocity_curve = SubResource("CurveTexture_w6gwo")
+gravity = Vector3(0, -100, 0)
+color_ramp = SubResource("GradientTexture1D_s0ldg")
+
+[sub_resource type="Animation" id="Animation_5qvw4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_bknvy")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PointLight2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PointLight2D:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_chyhn")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PointLight2D:texture_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [20.0]
+}
+
+[sub_resource type="Animation" id="Animation_dnyuf"]
+resource_name = "connect"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 8.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_chyhn"), ExtResource("3_chyhn")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:texture_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [20.0, 20.0]
+}
+
+[sub_resource type="Animation" id="Animation_2lcd1"]
+resource_name = "shake"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-21, -21), Vector2(24, 24), Vector2(-15, 18), Vector2(15, -12), Vector2(12, 15), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_csmct"]
+resource_name = "strength"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("6_pt0bq"), ExtResource("6_pt0bq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.87055, 1),
+"update": 0,
+"values": [0.98, 4.01]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:texture_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [10.0, 10.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yi5f8"]
+_data = {
+"RESET": SubResource("Animation_5qvw4"),
+"connect": SubResource("Animation_dnyuf"),
+"shake": SubResource("Animation_2lcd1"),
+"strength": SubResource("Animation_csmct")
+}
+
+[sub_resource type="Animation" id="Animation_wcix7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_v05lv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyContainer/Enemy:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kpyyk"]
+resource_name = "enemy_damaged"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_bknvy"), ExtResource("10_ip4fu"), ExtResource("10_ip4fu"), ExtResource("2_bknvy")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyContainer/Enemy:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0xqte"]
+resource_name = "invasion"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_bknvy"), ExtResource("10_ip4fu")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6kwux"]
+_data = {
+"RESET": SubResource("Animation_wcix7"),
+"enemy_damaged": SubResource("Animation_kpyyk"),
+"invasion": SubResource("Animation_0xqte")
+}
+
+[sub_resource type="Animation" id="Animation_f671b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_t6w22")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyContainer/Enemy:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xocu1"]
+resource_name = "invasion"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_v05lv"), ExtResource("11_7jo5k"), ExtResource("11_7jo5k"), ExtResource("10_v05lv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyContainer/Enemy:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pvd04"]
+resource_name = "enemy_damaged"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("10_v05lv"), ExtResource("11_7jo5k")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_su566"]
+_data = {
+"RESET": SubResource("Animation_f671b"),
+"enemy_damaged": SubResource("Animation_xocu1"),
+"invasion": SubResource("Animation_pvd04")
+}
+
+[sub_resource type="Animation" id="Animation_bev0f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_v05lv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyContainer/Enemy:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jtanj"]
+resource_name = "enemy_damaged"
+length = 0.6
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1998, 0.3996, 0.5994),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_bbvif"), ExtResource("14_6prvm"), ExtResource("14_6prvm"), ExtResource("13_bbvif")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyContainer/Enemy:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0999, 0.1998, 0.2997, 0.3996, 0.4995, 0.5994),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7xt30"]
+resource_name = "invasion"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("13_bbvif"), ExtResource("14_6prvm")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4jg3"]
+_data = {
+"RESET": SubResource("Animation_bev0f"),
+"enemy_damaged": SubResource("Animation_jtanj"),
+"invasion": SubResource("Animation_7xt30")
+}
+
+[sub_resource type="Animation" id="Animation_3ojqh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_v05lv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyContainer/Enemy:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ulkf8"]
+resource_name = "enemy_damaged"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_t6w22"), ExtResource("8_mpxwa"), ExtResource("8_mpxwa"), ExtResource("8_t6w22")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyContainer/Enemy:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8ftco"]
+resource_name = "invasion"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyContainer/Enemy:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("8_t6w22"), ExtResource("8_mpxwa")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yoole"]
+_data = {
+"RESET": SubResource("Animation_3ojqh"),
+"enemy_damaged": SubResource("Animation_ulkf8"),
+"invasion": SubResource("Animation_8ftco")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d41m4"]
+bg_color = Color(0.180392, 0.219608, 0.196078, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.027451, 0.0235294, 0.027451, 1)
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rgnlo")
+enemy = ExtResource("2_nip18")
+bgm = ExtResource("3_pk7gr")
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(960, 465)
+energy = 10.0
+texture = ExtResource("3_chyhn")
+texture_scale = 20.0
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.340575, 0.377084, 0.648748, 0.890196)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_pinbk")
+metadata/_edit_lock_ = true
+
+[node name="EnemyContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_right = 288.0
+offset_bottom = 652.0
+grow_horizontal = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="EnemyContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Sync" type="ProgressBar" parent="EnemyContainer"]
+custom_minimum_size = Vector2(700, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_htcrn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6b1rl")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="EnemyContainer/Sync"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="EnemyContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Conn" type="ProgressBar" parent="EnemyContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_htcrn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6b1rl")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="EnemyContainer/Conn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Enemy" type="TextureRect" parent="EnemyContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_v05lv")
+stretch_mode = 3
+
+[node name="PlayerContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -254.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="PlayerPanel" type="Panel" parent="PlayerContainer"]
+custom_minimum_size = Vector2(1920, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vvg1")
+
+[node name="PlayerData" type="HBoxContainer" parent="PlayerContainer/PlayerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerContainer/PlayerPanel/PlayerData"]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+
+[node name="Vigor" type="ProgressBar" parent="PlayerContainer/PlayerPanel/PlayerData"]
+custom_minimum_size = Vector2(1000, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_htcrn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6b1rl")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="PlayerContainer/PlayerPanel/PlayerData/Vigor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="PlayerContainer/PlayerPanel/PlayerData"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+
+[node name="SkillNumberLabel" type="Label" parent="PlayerContainer/PlayerPanel/PlayerData"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 45
+text = "回合点数：2"
+
+[node name="End" type="Button" parent="PlayerContainer/PlayerPanel/PlayerData"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mg4i2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mg4i2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ckgvn")
+text = "结束回合"
+
+[node name="MarginContainer3" type="MarginContainer" parent="PlayerContainer/PlayerPanel/PlayerData"]
+custom_minimum_size = Vector2(62, 0)
+layout_mode = 2
+
+[node name="ActionPanel" type="Panel" parent="PlayerContainer"]
+custom_minimum_size = Vector2(1920, 260)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vvg1")
+
+[node name="Actions" type="HBoxContainer" parent="PlayerContainer/ActionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="PlayerContainer/ActionPanel/Actions"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Skill1" type="Button" parent="PlayerContainer/ActionPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mg4i2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mg4i2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ckgvn")
+text = "连接
+连接20%，费1回合"
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="Skill2" type="Button" parent="PlayerContainer/ActionPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mg4i2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mg4i2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ckgvn")
+text = "意识震荡
+同步20%，同步倍率+10%，费2回合"
+autowrap_mode = 3
+
+[node name="Skill3" type="Button" parent="PlayerContainer/ActionPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mg4i2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mg4i2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ckgvn")
+text = "灵魂缠绕
+同步20%，费1回合"
+
+[node name="Skill4" type="Button" parent="PlayerContainer/ActionPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mg4i2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mg4i2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ckgvn")
+text = "屏障
+回复精神2，费1回合"
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerContainer/ActionPanel/Actions"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Text" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(220, 250)
+layout_mode = 0
+offset_left = 120.0
+offset_top = 784.0
+offset_right = 1801.0
+offset_bottom = 1070.0
+theme_override_colors/font_color = Color(0.86057, 0.890996, 0.875598, 1)
+theme_override_colors/font_shadow_color = Color(0.0352941, 0.0784314, 0.0823529, 1)
+theme_override_colors/font_outline_color = Color(0.0666667, 0.12549, 0.121569, 1)
+theme_override_constants/line_spacing = 2
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_h3bww")
+label_settings = SubResource("LabelSettings_lhqe5")
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 2
+metadata/_edit_lock_ = true
+
+[node name="Fire" type="GPUParticles2D" parent="Text"]
+visible = false
+texture_filter = 4
+position = Vector2(1482, 190)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_itonr")
+texture = ExtResource("6_pt0bq")
+metadata/_edit_lock_ = true
+
+[node name="Anime" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yi5f8")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Anime1" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6kwux")
+}
+
+[node name="Anime2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_su566")
+}
+
+[node name="Anime3" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a4jg3")
+}
+
+[node name="Anime4" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yoole")
+}
+
+[node name="Tips" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 80.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_stgwl")
+texture_pressed = ExtResource("17_stgwl")
+texture_hover = ExtResource("17_stgwl")
+texture_disabled = ExtResource("17_stgwl")
+texture_focused = ExtResource("17_stgwl")
+
+[node name="BattleTips" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="BattleTips"]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="BattleTips/ColorRect"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d41m4")
+
+[node name="CloseTips" type="TextureButton" parent="BattleTips/ColorRect/Panel"]
+layout_mode = 0
+offset_left = 902.0
+offset_top = -89.0
+offset_right = 990.0
+offset_bottom = -1.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("18_e3h28")
+texture_pressed = ExtResource("18_e3h28")
+texture_hover = ExtResource("18_e3h28")
+texture_disabled = ExtResource("18_e3h28")
+texture_focused = ExtResource("18_e3h28")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleTips/ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 40
+text = "战斗指导"
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 30
+text = "> 初始连接率为40%，连接率上升获得同步加成"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 30
+text = "> 初始连接率降低至40%以下时，无法与生物同步"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 30
+text = "> “意识震荡”提升倍率仅当前战争有效"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 30
+text = "> 当对面生物与自身同步100%时入侵成功"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BattleTips/ColorRect/Panel/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_75ws5")
+theme_override_font_sizes/font_size = 30
+text = "> 入侵有风险，己方精神值清零会被对面生物夺取意识"
+
+[connection signal="pressed" from="PlayerContainer/PlayerPanel/PlayerData/End" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="PlayerContainer/ActionPanel/Actions/Skill1" to="." method="_on_skill_1_pressed"]
+[connection signal="pressed" from="PlayerContainer/ActionPanel/Actions/Skill2" to="." method="_on_skill_2_pressed"]
+[connection signal="pressed" from="PlayerContainer/ActionPanel/Actions/Skill3" to="." method="_on_skill_3_pressed"]
+[connection signal="pressed" from="PlayerContainer/ActionPanel/Actions/Skill4" to="." method="_on_skill_4_pressed"]
+[connection signal="pressed" from="Tips" to="." method="_on_tips_pressed"]
+[connection signal="pressed" from="BattleTips/ColorRect/Panel/CloseTips" to="." method="_on_close_tips_pressed"]

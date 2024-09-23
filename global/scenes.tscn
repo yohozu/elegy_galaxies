@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyisu7uiib6rg"]
+
+[ext_resource type="Texture2D" uid="uid://qmgbumqkllh2" path="res://assets/pictures/UI/宇宙背景.png" id="1_154yf"]
+[ext_resource type="Script" path="res://global/scenes.gd" id="2_1dgv5"]
+
+[node name="Scenes" type="Sprite2D"]
+texture = ExtResource("1_154yf")
+offset = Vector2(960, 540)
+script = ExtResource("2_1dgv5")

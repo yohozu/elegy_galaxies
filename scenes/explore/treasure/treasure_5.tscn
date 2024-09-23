@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddmyklw3fbicm"]
+
+[ext_resource type="PackedScene" uid="uid://2pv6ssrxpxho" path="res://scenes/explore/treasure/treasure_template.tscn" id="1_dxsow"]
+[ext_resource type="Texture2D" uid="uid://cp6wtuqg44786" path="res://assets/pictures/web_download/遗落星舰.jpg" id="2_dno21"]
+
+[node name="Treasure5" instance=ExtResource("1_dxsow")]
+texture = ExtResource("2_dno21")
+
+[node name="Label" parent="." index="0"]
+text = "你飞越一片空旷的星域，那里残存着被战争撕裂的战舰残骸,它静静地漂浮在太空，仿佛诉说着一场永恒的冲突和悲剧。"

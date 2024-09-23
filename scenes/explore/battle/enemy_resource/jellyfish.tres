@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b2pp6xrkhyyhk"]
+
+[ext_resource type="Texture2D" uid="uid://dv4ao0val6ogn" path="res://assets/pictures/web_download/深海.jpg" id="1_tfowi"]
+[ext_resource type="Script" path="res://scenes/explore/battle/enemy_resource/base_enemy.gd" id="2_0c2tq"]
+[ext_resource type="Texture2D" uid="uid://j0qrwu84oxid" path="res://assets/pictures/creatures/1类生物1.png" id="3_duuqb"]
+
+[resource]
+script = ExtResource("2_0c2tq")
+text = "探测器发现了厚冰层下海洋生物的意识。"
+texture = ExtResource("3_duuqb")
+envir = ExtResource("1_tfowi")
+damage = 2.0
+multiply_damage = 1.0
+recover_conn = 10.0
+recover_sync = 10.0
+current_sync = 0.0
+current_conn = 40.0
+enemy_number = 1

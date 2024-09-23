@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpmtoxgfbndh7"]
+
+[ext_resource type="PackedScene" uid="uid://dnch76fxu1nkv" path="res://scenes/explore/battle/battle.tscn" id="1_hpo26"]
+[ext_resource type="Resource" uid="uid://b2pp6xrkhyyhk" path="res://scenes/explore/battle/enemy_resource/jellyfish.tres" id="2_v5uvf"]
+[ext_resource type="AudioStream" uid="uid://clrq7opnf6aun" path="res://assets/audios/Driving Concern.mp3" id="3_7vdaq"]
+
+[node name="Battle" instance=ExtResource("1_hpo26")]
+enemy = ExtResource("2_v5uvf")
+bgm = ExtResource("3_7vdaq")

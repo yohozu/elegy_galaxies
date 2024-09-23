@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://tdxmawmn44h8"]
+
+[ext_resource type="PackedScene" uid="uid://2pv6ssrxpxho" path="res://scenes/explore/treasure/treasure_template.tscn" id="1_drmow"]
+[ext_resource type="Texture2D" uid="uid://dwodkfb4mbhki" path="res://assets/pictures/web_download/超新星.jpg" id="2_1r7k4"]
+
+[node name="Treasure4" instance=ExtResource("1_drmow")]
+texture = ExtResource("2_1r7k4")
+
+[node name="Label" parent="." index="0"]
+text = "超新星爆发时，宇宙中迸发出炽热的光芒和色彩斑斓的喷发物质，巨大的能量波动在空间中扩散，如同绚烂的宇宙烟花。"

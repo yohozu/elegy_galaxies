@@ -1,0 +1,268 @@
+[gd_scene load_steps=18 format=3 uid="uid://bihi1nhguwo38"]
+
+[ext_resource type="PackedScene" uid="uid://dyisu7uiib6rg" path="res://global/scenes.tscn" id="1_ov465"]
+[ext_resource type="Texture2D" uid="uid://cofkiybv6yod" path="res://assets/pictures/UI/封面.png" id="2_c4cff"]
+[ext_resource type="Script" path="res://scenes/start/start.gd" id="2_m18sl"]
+[ext_resource type="FontFile" uid="uid://pye0cpcvyq2x" path="res://assets/fonts/ChuangKeTieJinGangTi-2.otf" id="4_bvajp"]
+[ext_resource type="AudioStream" uid="uid://c2r5e8ilggppt" path="res://assets/audios/Big Eyes.mp3" id="4_nyoq7"]
+[ext_resource type="Theme" uid="uid://654fygt855io" path="res://assets/fonts/main_theme.tres" id="5_7o0dy"]
+[ext_resource type="Texture2D" uid="uid://c4kqg2gdm145x" path="res://assets/pictures/UI/退出.png" id="6_wjt35"]
+[ext_resource type="Script" path="res://scenes/start/check_button.gd" id="8_0cg7h"]
+[ext_resource type="PackedScene" uid="uid://dnk0eunha5nfn" path="res://scenes/start/voice_changer.tscn" id="9_7pugc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dsohn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_digwk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqn1m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85hry"]
+bg_color = Color(0.180392, 0.219608, 0.196078, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.027451, 0.0235294, 0.027451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mj48x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2frwk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csthf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2r4fc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Start" instance=ExtResource("1_ov465")]
+texture = ExtResource("2_c4cff")
+script = ExtResource("2_m18sl")
+bgm = ExtResource("4_nyoq7")
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="." index="0"]
+custom_minimum_size = Vector2(750, 350)
+offset_left = 900.0
+offset_right = 1650.0
+offset_bottom = 400.0
+theme_override_fonts/font = ExtResource("4_bvajp")
+theme_override_font_sizes/font_size = 110
+text = "星海拾荒"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -680.0
+offset_right = 690.0
+offset_bottom = -170.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Start" type="Button" parent="VBoxContainer" index="0"]
+custom_minimum_size = Vector2(750, 100)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_7o0dy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dsohn")
+text = "开始"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Load" type="Button" parent="VBoxContainer" index="2"]
+visible = false
+custom_minimum_size = Vector2(750, 100)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_7o0dy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_digwk")
+text = "读取"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" index="3"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Config" type="Button" parent="VBoxContainer" index="4"]
+custom_minimum_size = Vector2(750, 100)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_7o0dy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uqn1m")
+text = "设置"
+
+[node name="End" type="TextureButton" parent="." index="2"]
+offset_left = 1765.0
+offset_top = 17.0
+offset_right = 1904.0
+offset_bottom = 149.0
+texture_normal = ExtResource("6_wjt35")
+texture_pressed = ExtResource("6_wjt35")
+texture_hover = ExtResource("6_wjt35")
+texture_disabled = ExtResource("6_wjt35")
+texture_focused = ExtResource("6_wjt35")
+stretch_mode = 0
+
+[node name="Config" type="Node" parent="." index="3"]
+
+[node name="Panel" type="Panel" parent="Config" index="0"]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_85hry")
+metadata/_edit_lock_ = true
+
+[node name="VBox" type="VBoxContainer" parent="Config/Panel" index="0"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="HBox1" type="HBoxContainer" parent="Config/Panel/VBox" index="0"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label1" type="Label" parent="Config/Panel/VBox/HBox1" index="0"]
+layout_mode = 2
+theme = ExtResource("5_7o0dy")
+text = "全屏"
+
+[node name="MarginContainer6" type="MarginContainer" parent="Config/Panel/VBox/HBox1" index="1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="Config/Panel/VBox/HBox1" index="2"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mj48x")
+script = ExtResource("8_0cg7h")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Config/Panel/VBox/HBox1" index="3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="Config/Panel/VBox/HBox1" index="4"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Config/Panel/VBox" index="1"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="HBox2" type="HBoxContainer" parent="Config/Panel/VBox" index="2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="Config/Panel/VBox/HBox2" index="0"]
+layout_mode = 2
+theme = ExtResource("5_7o0dy")
+text = "音乐"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Config/Panel/VBox/HBox2" index="1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="VoiceChanger" parent="Config/Panel/VBox/HBox2" index="2" instance=ExtResource("9_7pugc")]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Config/Panel/VBox" index="3"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="HBox3" type="HBoxContainer" parent="Config/Panel/VBox" index="4"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label3" type="Label" parent="Config/Panel/VBox/HBox3" index="0"]
+layout_mode = 2
+theme = ExtResource("5_7o0dy")
+text = "音效"
+
+[node name="MarginContainer5" type="MarginContainer" parent="Config/Panel/VBox/HBox3" index="1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="On3" type="Button" parent="Config/Panel/VBox/HBox3" index="2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_7o0dy")
+theme_override_colors/font_hover_color = Color(0.521141, 0.521141, 0.521141, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2frwk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_csthf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_csthf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2r4fc")
+text = "on"
+
+[node name="MarginContainer" type="MarginContainer" parent="Config/Panel/VBox/HBox3" index="3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Off3" type="Button" parent="Config/Panel/VBox/HBox3" index="4"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_7o0dy")
+theme_override_colors/font_hover_color = Color(0.521141, 0.521141, 0.521141, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2frwk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_csthf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_csthf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2r4fc")
+text = "off"
+
+[node name="CloseSetting" type="TextureButton" parent="Config/Panel" index="1"]
+layout_mode = 0
+offset_left = 904.0
+offset_top = -90.0
+offset_right = 992.0
+offset_bottom = -2.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_wjt35")
+texture_pressed = ExtResource("6_wjt35")
+texture_hover = ExtResource("6_wjt35")
+texture_disabled = ExtResource("6_wjt35")
+texture_focused = ExtResource("6_wjt35")
+
+[node name="ColorRect" type="ColorRect" parent="Config" index="1"]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="End" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="Config/Panel/VBox/HBox1/CheckButton" to="Config/Panel/VBox/HBox1/CheckButton" method="_on_pressed"]
+[connection signal="pressed" from="Config/Panel/VBox/HBox3/On3" to="Config/Panel/VBox/HBox1/CheckButton" method="_on_on_3_pressed"]
+[connection signal="pressed" from="Config/Panel/VBox/HBox3/Off3" to="Config/Panel/VBox/HBox1/CheckButton" method="_on_off_3_pressed"]
+[connection signal="pressed" from="Config/Panel/CloseSetting" to="." method="_on_close_setting_pressed"]

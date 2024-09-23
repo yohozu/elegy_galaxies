@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dv8j1n2apxrmh"
+path="res://.godot/imported/Ice and Snow.mp3-958f046f0b2a9fbdbddcb38cf32e5116.mp3str"
+
+[deps]
+
+source_file="res://assets/audios/Ice and Snow.mp3"
+dest_files=["res://.godot/imported/Ice and Snow.mp3-958f046f0b2a9fbdbddcb38cf32e5116.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

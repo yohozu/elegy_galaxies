@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdl27qu2hdr64"]
+
+[ext_resource type="Script" path="res://scenes/galaxy/interactable_galaxy.gd" id="1_x1raf"]
+
+[node name="InteractableGalaxy" type="Area2D"]
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_x1raf")

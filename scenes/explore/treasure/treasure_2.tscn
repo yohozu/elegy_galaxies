@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://6bp77dmq6ems"]
+
+[ext_resource type="PackedScene" uid="uid://2pv6ssrxpxho" path="res://scenes/explore/treasure/treasure_template.tscn" id="1_jjbxn"]
+[ext_resource type="Texture2D" uid="uid://bjku471vq2b3j" path="res://assets/pictures/web_download/类星体.jpg" id="2_1ym50"]
+
+[node name="Treasure2" instance=ExtResource("1_jjbxn")]
+texture = ExtResource("2_1ym50")
+
+[node name="Label" parent="." index="0"]
+text = "你飞过一个类星体区域，炽热的光芒从其核心喷薄而出。周围气体和尘埃被撕扯成烟花般的景象，宇宙的深邃黑暗在光芒中闪烁。"
